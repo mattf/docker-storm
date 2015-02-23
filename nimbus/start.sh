@@ -1,5 +1,5 @@
 #!/bin/sh
 
-/configure.sh $1
+/configure.sh ${ZOOKEEPER_SERVICE_HOST:-$1}
 
 exec bin/storm nimbus
