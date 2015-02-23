@@ -5,11 +5,11 @@ environment for interacting with a Storm cluster.
 
 # Build
 
-* docker build -t <name>/storm-base .
+* ```docker build -t <name>/storm-base .```
 
 # Use
 
-* docker run -it <name>/storm-base sh
-* cd /opt/apache/storm
-* /configure.sh <zookeeper_ip> <nimbus_ip>
-* ./bin/storm ...
+* ```docker run -it <name>/storm-base sh```
+* ```cd /opt/apache/storm```
+* ```/configure.sh <zookeeper_ip> <nimbus_ip>```
+* ```./bin/storm ...```
