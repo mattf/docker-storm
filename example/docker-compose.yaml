@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  zookeeper-server:
+    image: gudari/zookeeper:3.4.14
+    container_name: zookeeper-server
+    hostname: zookeeper-server
+    env_file:
+    - zookeeper.env
+  storm-ui:
+    image: vtoolsdockerregistry.azurecr.io/big-data-storm:2.1.0
+    container_name: storm-ui
+    hostname: storm-ui
+    ports:
+    - 8080:8080
+    env_file:
+    - storm.env
+    command: ui
+  storm-nimbus:
+    image: vtoolsdockerregistry.azurecr.io/big-data-storm:2.1.0
+    container_name: storm-nimbus
+    hostname: storm-nimbus
+    env_file:
+    - storm.env
+    command: nimbus
+  storm-worker:
+    image: vtoolsdockerregistry.azurecr.io/big-data-storm:2.1.0
+    container_name: storm-worker
+    hostname: storm-worker
+    env_file:
+    - storm.env
+    command: supervisor
